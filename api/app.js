@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const path = require('path');
 
-const index = require('./routes/index.js');
+const lists = require('./routes/list.js');
 
 const app = express();
 
@@ -14,10 +14,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 // middlewares
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(logger())
+app.use(logger('dev'));
 
 // routes
-app.use('/', index);
+app.use('/', lists);
 
 app.listen(80, function(){
   console.log('server listening at 3000')
