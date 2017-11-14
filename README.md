@@ -9,6 +9,16 @@
 + BookList
 + ToDoList
 + GamesList
++ React animations
++ New item Modal
++ Voting system!
++ Css grid + flexbox
++ Api route for multiple items (just for initial upload) 
++ Login
++ Multiple lists
++ Add ownership
++ Non loged view
++ Public/private views
 
 ### Could work
 
@@ -17,11 +27,12 @@
 
 ### Work for the future (im lazy)
 
-+ Contact List with updatable info?
++ Contact List
 + Allow other to edit my lists?
 + Or add lists for outsiders suggestions?
 
 ## Code Upgrades
 
-+ Add expoce
++ Add expose
 + Validate and Sanitize Input
++ Switch to psql
