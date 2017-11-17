@@ -9,15 +9,9 @@
 + BookList
 + ToDoList
 + GamesList
-+ React animations
-+ New item Modal
-+ Voting system!
-+ Css grid + flexbox
-+ Api route for multiple items (just for initial upload) 
-+ Login
-+ Multiple lists
++ Check React animations
++ Check Css grid + flexbox
 + Add ownership
-+ Non loged view
 + Public/private views
 
 ### Could work
@@ -36,3 +30,5 @@
 + Add expose
 + Validate and Sanitize Input
 + Switch to psql
++ Drop passport auth
++ Add Redis for sessions
