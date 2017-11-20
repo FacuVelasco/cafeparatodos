@@ -9,6 +9,10 @@
 + BookList
 + ToDoList
 + GamesList
++ Check React animations
++ Check Css grid + flexbox
++ Add ownership
++ Public/private views
 
 ### Could work
 
@@ -17,11 +21,14 @@
 
 ### Work for the future (im lazy)
 
-+ Contact List with updatable info?
++ Contact List
 + Allow other to edit my lists?
 + Or add lists for outsiders suggestions?
 
 ## Code Upgrades
 
-+ Add expoce
++ Add expose
 + Validate and Sanitize Input
++ Switch to psql
++ Drop passport auth
++ Add Redis for sessions
