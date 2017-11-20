@@ -1,7 +1,7 @@
 import { createStore, compose, applyMiddleware } from 'redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { hashHistory } from 'react-router';
-import thunkMiddleware from 'redux-thunk';
+import thunk from 'redux-thunk';
 
 import rootReducer from './reducers/index';
 
@@ -16,7 +16,7 @@ const defaultState = {
 }
 
 const enhancers = compose(
-  applyMiddleware(thunkMiddleware),
+  applyMiddleware(thunk),
   window.devToolsExtension ? window.devToolsExtension() : (f) => f
 )
 

@@ -15,6 +15,7 @@ function getList(req, res, next) {
 }
 
 function getElem(req, res, next) {
+  console.log('ELEM')
   req.model.findById(req.params.id).then((elem) => {
     req.response.content = elem;
     next();
@@ -28,7 +29,7 @@ function addElem(req, res, next) {
   req.model.create(req.body)
   .then(elem => {
     req.response.content = elem;
-    req.response.state.code = 201;
+    req.response.code = 201;
     next();
   }).catch((err) => {
     req.response.error = err;
@@ -45,20 +46,20 @@ function deleteElem(req, res, next) {
 }
 
 router.use(setResponse);
-router.use(getModel);
+
 // everything alrigth
 router.get('/', sendResponse);
 
 // get full list
-router.get('/:model', getList, sendResponse);
+router.get('/:model', getModel, getList, sendResponse);
 
 // get specific element
-router.get('/:model/:id', getElem, sendResponse);
+router.get('/:model/:id', getModel, getElem, sendResponse);
 
 // add element to list
-router.post('/:model', validateInput, sanitizeInput, addElem, sendResponse);
+router.post('/:model', getModel, validateInput, sanitizeInput, addElem, sendResponse);
 
 // delete element
-router.delete('/:model/:id', sanitizeInput, deleteElem, sendResponse);
+router.delete('/:model/:id', getModel, sanitizeInput, deleteElem, sendResponse);
 
 module.exports = router;

@@ -2,9 +2,9 @@ const { mongoose } = require('../config/db.js');
 
 const shopSquema = mongoose.Schema({
   name: { type: String, require: true },
-  aproxPrice: { type: Number },
+  price: { type: Number },
   links: [{ type: String }],
   imgUrl: { type: String },
 })
 
-module.exports = mongoose.model('todos', shopSquema);
+module.exports = mongoose.model('shop', shopSquema);

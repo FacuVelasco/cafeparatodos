@@ -6,4 +6,4 @@ const configSquema = mongoose.Schema({
   description: { type: String },
 })
 
-module.exports = mongoose.model('todos', configSquema);
+module.exports = mongoose.model('configs', configSquema);

@@ -1,14 +1,12 @@
-const response = require('../models/response');
-
 const { findModel } = require('./modelFn');
 
 function setResponse(req, res, next) {
-  req.response = Object.assign({}, response);
+  req.response = {};
   next();
 }
 
 function sendResponse(req, res) {
-  res.status(req.response.state.code || 200).send(req.response);
+  res.status(req.response.code || 200).send(req.response);
 }
 
 function sanitizeInput(req, res, next) {

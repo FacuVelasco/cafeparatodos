@@ -4,6 +4,7 @@
   "description": "front para la pagina personal",
   "main": "index.js",
   "scripts": {
+    "build": "webpack -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -12,5 +13,27 @@
   },
   "author": "CafeParaTodos",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/facuvelasco/personalpage#readme"
+  "homepage": "https://bitbucket.org/facuvelasco/personalpage#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "script-loader": "^0.7.2",
+    "style-loader": "^0.19.0",
+    "url-loader": "^0.6.2"
+  },
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-icons": "^2.2.7",
+    "react-redux": "^5.0.6",
+    "react-router": "^3.0.5",
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "webpack": "^3.8.1"
+  }
 }

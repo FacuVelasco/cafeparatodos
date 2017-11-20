@@ -1,0 +1,5 @@
+.container {
+  color: #efefef;
+  background-color: #503bc7;
+  min-height: 100vh;
+}

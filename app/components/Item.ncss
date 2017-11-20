@@ -1,0 +1,12 @@
+.item {
+  display: flex
+}
+.deleteButton {
+  opacity: 0;
+  width: 20px;
+  height: 20px;
+  transition: 0.5s;
+}
+.deleteButton:hover {
+  opacity: 1;
+}

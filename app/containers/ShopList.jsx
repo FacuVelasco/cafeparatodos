@@ -2,8 +2,10 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { deleteShopListFav, deleteShopListItem } from '../redux/actionCreator/';
+import { deleteShopListFav, deleteShopListItem, searchAll } from '../redux/actionCreator/';
 import List from './List.jsx';
+import Loading from '../components/Loading.jsx';
+import s from './ShopList.ncss';
 
 function mapStateToProps(state){
   return {
@@ -15,30 +17,32 @@ function mapStateToProps(state){
 }
 
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({ deleteShopListFav, deleteShopListItem }, dispatch)
+  return bindActionCreators({ deleteShopListFav, deleteShopListItem, searchAll }, dispatch);
 }
 
 class ShopList extends React.Component{
+  componentDidMount() {
+    this.props.searchAll('market');
+  }
   render() {
-    return (
-      <div>
-        <div className="listContainer">
+    if (this.props.loading) return <Loading />
+    else {
+      return (
+        <div className={s.listContainer}>
           <List
             items={this.props.items}
             categorys={this.props.categorys}
             deleteElem={this.props.deleteShopListItem}
             loading={this.props.loading}
-          />
-        </div>
-        <div className="sideList">          
+          />          
           <List
             items={this.props.favorites}
             deleteElem={this.props.deleteShopListFav}
             loading={this.props.loading}
           />
         </div>
-      </div>
-    )
+      )
+    }
   }
 }
 
