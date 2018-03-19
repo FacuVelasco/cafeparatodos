@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import { IndexRoute, Router, Route, hashHistory } from 'react-router';
 import { Provider } from 'react-redux';
 import store, { history } from './redux/store';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import Main from './containers/Main.jsx';
 import Home from './containers/Home.jsx';
@@ -19,4 +20,4 @@ const route = (
   </Provider>
 )
 
-render(route, document.getElementById('root'));
+render(<MuiThemeProvider>{route}</MuiThemeProvider>, document.getElementById('root'));

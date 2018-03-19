@@ -17,7 +17,7 @@ app.use(cookieParser());
 app.use(logger('dev'));
 
 // routes
-app.use('/', lists);
+app.use('/api', lists);
 
 app.listen(80, function(){
   console.log('server listening at 3000')

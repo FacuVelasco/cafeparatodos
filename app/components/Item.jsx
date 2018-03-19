@@ -1,17 +1,18 @@
 import React from 'react';
 import s from './Item.ncss';
 import Trash from 'react-icons/lib/fa/trash';
+import { TableRow, TableRowColumn } from 'material-ui/Table';
 
 export default function Items(props) {
-  const { name, contributor, deleteElem} = props
-  console.log('ITEM PROPS', props)
+  const { info, deleteElem, i } = props
+  console.log('ITEM info', info)
+  console.log(props)
   return (
-    <div className={s.item}>
-      <div className={s.itemName}>{name}</div>
-      <div className={s.itemContributor}>{contributor}</div>
-      <div className={s.deleteButton} onClick={() => deleteElem(elem.i)}>
-        <Trash />
-      </div>
-    </div>
+    <TableRow>
+      <TableRowColumn>{info.name} </TableRowColumn>
+      <TableRowColumn>{info.amount}</TableRowColumn>
+      <TableRowColumn>{info.observation}</TableRowColumn>
+      <TableRowColumn><Trash /></TableRowColumn>
+    </TableRow>
   )
 }

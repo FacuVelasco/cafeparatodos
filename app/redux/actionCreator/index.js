@@ -61,7 +61,7 @@ export function showErr() {
 export function searchAll(model){
   return (dispatch) => {
     dispatch(loading())
-    return fetch(`http://localhost/${model}`, {
+    return fetch(`http://localhost/api/${model}`, {
       method: 'GET',
       includes: 'credentials',
     })

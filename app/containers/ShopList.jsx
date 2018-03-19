@@ -1,6 +1,7 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { Tabs, Tab } from 'material-ui/Tabs';
 
 import { deleteShopListFav, deleteShopListItem, searchAll } from '../redux/actionCreator/';
 import List from './List.jsx';
@@ -21,6 +22,12 @@ function mapDispatchToProps(dispatch){
 }
 
 class ShopList extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      tab: 'current',
+    }
+  }
   componentDidMount() {
     this.props.searchAll('market');
   }
@@ -28,19 +35,26 @@ class ShopList extends React.Component{
     if (this.props.loading) return <Loading />
     else {
       return (
-        <div className={s.listContainer}>
-          <List
-            items={this.props.items}
-            categorys={this.props.categorys}
-            deleteElem={this.props.deleteShopListItem}
-            loading={this.props.loading}
-          />          
-          <List
-            items={this.props.favorites}
-            deleteElem={this.props.deleteShopListFav}
-            loading={this.props.loading}
-          />
-        </div>
+        <Tabs
+          value={this.state.tab}
+          onChange={this.handleChange}
+        >
+          <Tab label="Current List" value="current">
+            <List
+              items={this.props.items}
+              categorys={this.props.categorys}
+              deleteElem={this.props.deleteShopListItem}
+              loading={this.props.loading}
+            />
+          </Tab>          
+          <Tab label="Favorites" value="favorites">
+            <List
+              items={this.props.favorites}
+              deleteElem={this.props.deleteShopListFav}
+              loading={this.props.loading}
+            />
+          </Tab>
+        </Tabs>
       )
     }
   }
